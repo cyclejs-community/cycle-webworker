@@ -10,6 +10,7 @@ If you have not used Web Workers before, please see the [MDN documentation](http
 
 ```js
 import {makeWebWorkerDriver} from 'cycle-webworker';
+import {run} from '@cycle/run';
 
 const drivers = {
   Worker: makeWebWorkerDriver('/worker.js')
