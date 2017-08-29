@@ -1,0 +1,43 @@
+{
+  "name": "cycle-webworker",
+  "version": "1.0.0",
+  "description": "A straightforward webworker driver for Cycle.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "peerDependencies": {
+    "xstream": "*"
+  },
+  "devDependencies": {
+    "@cycle/dom": "^18.1.0",
+    "@cycle/run": "^3.2.0",
+    "budo": "^10.0.4",
+    "mocha": "^3.5.0",
+    "ts-node": "^3.3.0",
+    "tsify": "^3.0.1",
+    "typescript": "^2.4.2",
+    "xstream": "^10.9.0"
+  },
+  "scripts": {
+    "start": "budo example/index.ts --dir example --live -- -p tsify",
+    "lib": "tsc",
+    "test": "mocha --compilers ts:ts-node/register",
+    "prepare": "npm run lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyclejs-community/cycle-webworker.git"
+  },
+  "keywords": [
+    "cycle.js",
+    "cyclejs",
+    "webworker"
+  ],
+  "author": "Nick Johnstone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyclejs-community/cycle-webworker/issues"
+  },
+  "homepage": "https://github.com/cyclejs-community/cycle-webworker#readme"
+}
