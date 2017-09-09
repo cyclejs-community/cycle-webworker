@@ -23,7 +23,7 @@
   "scripts": {
     "start": "budo example/index.ts --dir example --live -- -p tsify",
     "lib": "tsc",
-    "test": "markdown-doctest && mocha --compilers ts:ts-node/register",
+    "test": "markdown-doctest",
     "prepare": "npm run lib"
   },
   "repository": {
