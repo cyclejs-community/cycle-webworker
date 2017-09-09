@@ -45,7 +45,7 @@ function main(sources: ISources): ISinks {
 
 const drivers = {
   DOM: makeDOMDriver(document.body),
-  Worker: makeWebWorkerDriver('worker.js')
+  Worker: makeWebWorkerDriver(new Worker('worker.js'))
 };
 
 run(main, drivers);

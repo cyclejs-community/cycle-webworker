@@ -13,7 +13,7 @@ import {makeWebWorkerDriver} from 'cycle-webworker';
 import {run} from '@cycle/run';
 
 const drivers = {
-  Worker: makeWebWorkerDriver('/worker.js')
+  Worker: makeWebWorkerDriver(new Worker('/worker.js'))
 }
 
 function main (sources) {
@@ -37,13 +37,11 @@ There is a working example in `example/`. To run it, clone this project, `npm in
 import {makeWebWorkerDriver} from 'cycle-webworker';
 ```
 
-`makeWebWorkerDriver` takes a single argument, the source for the worker.
+`makeWebWorkerDriver` takes a single argument, the worker.
 
-This is generally the URI to load the script from, but it's also possible to encode JavaScript code into this source.
+This is generally constructed by calling `new Worker()` with a source url for the worker code, but also allows for use of libraries like [webworkify](https://github.com/browserify/webworkify).
 
-This argument is passed directly to `new Worker()`.
-
-Please see the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) for specifics around different forms this option can take.
+Please see the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) for documentation around creating workers.
 
 The resulting driver takes a stream of messages to send to the worker as sinks, and returns a stream of messages from the worker.
 

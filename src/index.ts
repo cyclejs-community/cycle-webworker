@@ -1,9 +1,7 @@
 import xs, {Stream} from 'xstream';
 
-export function makeWebWorkerDriver(workerSource: string) {
+export function makeWebWorkerDriver(worker: Worker) {
   return function (sink$: Stream<any>): Stream<string> {
-    const worker = new Worker(workerSource);
-
     sink$.addListener({
       next (ev: any) {
         worker.postMessage(ev);
