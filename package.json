@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "A straightforward webworker driver for Cycle.js",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
